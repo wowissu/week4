@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
 import TheWelcome from '@/components/TheWelcome.vue'
 </script>
@@ -14,12 +14,16 @@ import TheWelcome from '@/components/TheWelcome.vue'
 
         <nav>
           <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/about">About</RouterLink>
+          <RouterLink :to="{ name: 'setup' }">setup</RouterLink>
+          <RouterLink :to="{ name: 'transition' }">transition</RouterLink>
+          <RouterLink :to="{ name: 'keepAlive' }">keepAlive</RouterLink>
+          <RouterLink :to="{ name: 'teleport' }">teleport</RouterLink>
+          <RouterLink :to="{ name: 'suspense' }">suspense</RouterLink>
         </nav>
       </div>
     </header>
     <main>
-      <TheWelcome />
+      <RouterView></RouterView>
     </main>
   </div>
 </template>
